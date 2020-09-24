@@ -7,7 +7,6 @@ import ErrorIndicator from '../components/error-indicator';
 import { getWeatherData } from '../store/actions';
 import WeatherList from '../components/weather-list';
 import TransitionsModal from '../components/modal';
-// import Modal from '@material-ui/core/Modal';
 import ModalBody from '../components/modal-body';
 
 const WeatherContainer = (props) => {
@@ -48,7 +47,7 @@ const WeatherContainer = (props) => {
                 { spinner }
                 { errorMessage }
                 { content }  
-                {/* <ModalBody data={cityWeatherData.coord} /> */}
+               
                 <TransitionsModal isOpen={isOpen} isClose={handleClose} data={cityWeatherData} />
             </div>
         </div>
