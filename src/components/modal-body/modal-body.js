@@ -7,31 +7,25 @@ import ErrorIndicator from '../error-indicator';
 import WeatherTable from '../weather-table';
 import { getWeatherCityData } from '../../store/actions';
 
-const ModalBody = (props) => {
-
-    const { 
+const ModalBody = ({ 
         getWeatherCityHandler, 
         weatherCityLoading, 
         weatherCityError, 
         weatherCityData, 
         data, 
-    } = props;
+}) => {
 
     useEffect(() => { 
         getWeatherCityHandler(data);
     }, [data]);
     
-    const spinner = weatherCityLoading ? <CircularProgress /> : null;
-    const errorMessage = weatherCityError ? <ErrorIndicator /> : null;
-
     const hasData = !(weatherCityLoading || weatherCityError);
-    const content = hasData ? <WeatherTable data={weatherCityData}  /> : null;
 
     return (
         <>  
-            { spinner }
-            { errorMessage }
-            { content } 
+            { weatherCityLoading && <CircularProgress /> }
+            { weatherCityError && <ErrorIndicator /> }
+            { hasData && <WeatherTable data={weatherCityData}  /> } 
         </>
     )
 }

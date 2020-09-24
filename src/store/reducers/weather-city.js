@@ -12,16 +12,14 @@ const weatherCityReducer = (state = initialState, action) => {
 
     case FETCH_WEATHER_CITY_REQUEST:
         return {
-            loading: true,
-            weatherCityData: [],
-            error: false,
+            ...state,
         };
 
     case FETCH_WEATHER_CITY_SUCCESS:
         return {
+            ...state,
             loading: false,
             weatherCityData: action.payload,
-            error: false,
         };
 
     case FETCH_WEATHER_CITY_FAILURE:

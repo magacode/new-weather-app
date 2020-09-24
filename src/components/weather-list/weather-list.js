@@ -8,9 +8,9 @@ const WeatherList = ({ list, setIsOpen, setDataModal }) => {
     <List component="nav" aria-label="city weather">
       {
         list.map((data) => {
-            const { id } = data;
+          const { id } = data;
 
-            return <WeatherItem weatherData={data} setIsOpen={setIsOpen} setDataModal={setDataModal} key={id} />;
+          return <WeatherItem weatherData={data} setIsOpen={setIsOpen} setDataModal={setDataModal} key={id} />;
         })
       }
   </List>
