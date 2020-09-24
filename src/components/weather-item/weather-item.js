@@ -13,7 +13,8 @@ const WeatherItem = ({ weatherData, setIsOpen, setDataModal }) => {
       setDataModal({ name, coord })
     }}>
       <ListItemText primary={name} />
-        <Chip color="primary" label={temp} />
+        <Chip color="primary" label={Math.round(temp)} />
+        &#8451;
       </ListItem>
   )
       

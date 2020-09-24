@@ -7,16 +7,23 @@ import Fade from '@material-ui/core/Fade';
 import ModalBody from '../modal-body';
 
 const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  modal: {},
   paper: {
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+  },
+  modalInner: {
+    width: '100vw',
+    maxWidth: '750px',
+    height: '500px',
+    maxHeight: '100vh',
+    overflow: 'auto',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
   },
 }));
 
@@ -39,6 +46,7 @@ export default function TransitionsModal(props) {
                     timeout: 500,
                 }}
             >
+                <div className={classes.modalInner}>
                 <Fade in={isOpen}>
                     <div className={classes.paper}>
                         <h2 id="transition-modal-title">Прогноз погоды в г. {data.name}</h2>
@@ -46,6 +54,7 @@ export default function TransitionsModal(props) {
                         <ModalBody data={data.coord} />
                     </div>
                 </Fade>
+                </div>
             </Modal>
         </div>
     );

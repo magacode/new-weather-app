@@ -12,7 +12,7 @@ import WeatherTableCell from '../weather-table-cell';
 
 const useStyles = makeStyles({
   table: {
-    minWidth: `100%`,
+    minWidth: 650,
   },
 });
 

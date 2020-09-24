@@ -48,7 +48,7 @@ const WeatherContainer = (props) => {
                 { spinner }
                 { errorMessage }
                 { content }  
-
+                {/* <ModalBody data={cityWeatherData.coord} /> */}
                 <TransitionsModal isOpen={isOpen} isClose={handleClose} data={cityWeatherData} />
             </div>
         </div>
