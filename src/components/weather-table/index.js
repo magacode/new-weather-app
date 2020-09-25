@@ -1,3 +1,1 @@
-import WeatherTable from './weather-table';
-
-export default WeatherTable;
+export * from './weather-table'

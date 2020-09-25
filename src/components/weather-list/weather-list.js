@@ -1,20 +1,16 @@
 import React from 'react';
 import List from '@material-ui/core/List';
 
-import WeatherItem from '../weather-item';
+import { WeatherItem } from '../weather-item';
 
-const WeatherList = ({ list, setIsOpen, setDataModal }) => {
-  return (
+export const WeatherList = ({ weatherList, onOpen }) => (
     <List component="nav" aria-label="city weather">
-      {
-        list.map((data) => {
-          const { id } = data;
-
-          return <WeatherItem weatherData={data} setIsOpen={setIsOpen} setDataModal={setDataModal} key={id} />;
-        })
-      }
-  </List>
-  );        
-}
-
-export default WeatherList;
+        {weatherList?.map((weather) => (
+            <WeatherItem 
+                key={weather.id} 
+                weather={weather} 
+                onOpen={onOpen} 
+            />
+        ))}
+    </List>
+)

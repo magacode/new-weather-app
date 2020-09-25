@@ -1,23 +1,18 @@
-import React from 'react';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Typography from '@material-ui/core/Typography';
-import Chip from '@material-ui/core/Chip';
+import React, { useCallback } from 'react';
+import { ListItem, ListItemText, Chip } from '@material-ui/core';
 
-const WeatherItem = ({ weatherData, setIsOpen, setDataModal }) => {
-  const { coord, name, main: { temp  } } = weatherData;
+export const WeatherItem = ({ weather, onOpen }) => {
+    const { coord, name, main } = weather
 
-  return (
-    <ListItem button onClick={() => {
-      setIsOpen(true);
-      setDataModal({ name, coord })
-    }}>
-      <ListItemText primary={name} />
-        <Chip color="primary" label={Math.round(temp)} />
-        &#8451;
-      </ListItem>
-  )
-      
+    const handleOpened = useCallback(() => {
+        onOpen({ coord, name })
+    }, [coord, name, onOpen])
+
+    return (
+        <ListItem onClick={handleOpened} button>
+            <ListItemText primary={name} />
+                <Chip color="primary" label={Math.round(main.temp)} />
+                &#8451;
+        </ListItem>
+    )
 }
-
-export default WeatherItem;

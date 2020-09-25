@@ -1,15 +1,11 @@
 import React from "react";
 
-const ErrorIndicator = () => {
-  return (
+export const ErrorIndicator = () => (
     <div>
-      <div>Что-то пошло не так</div>
-      <div>
-        Попробуйте обновить вкладку браузера или повторите попытку через
-        несколько минут
-      </div>
+        <div>Что-то пошло не так</div>
+        <div>
+            Попробуйте обновить вкладку браузера или повторите попытку через
+            несколько минут
+        </div>
     </div>
-  );
-};
-
-export default ErrorIndicator;
+)

@@ -1,20 +1,14 @@
 import React from 'react';
-
-import ErrorBoundary from './components/error-boundary';
-import store from './store/store';
 import { Provider } from "react-redux";
-import App from './app';
 
-const Root = () => {      
-  
-    return (
-      <ErrorBoundary>
+import { ErrorBoundary } from './components/error-boundary';
+import { App } from './app';
+import { store } from './store';
+
+export const Root = () => (
+    <ErrorBoundary>
         <Provider store={store}>
-          <App />
+            <App />
         </Provider>        
-      </ErrorBoundary>      
-    );      
-  
-}
-
-export default Root;
+    </ErrorBoundary> 
+)

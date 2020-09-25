@@ -1,3 +1,1 @@
-import WeatherItem from './weather-item';
-
-export default WeatherItem;
+export * from './weather-item'
